@@ -14,11 +14,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // Do not call .cors(...) here!
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/**").permitAll()  // for testing
+                        .requestMatchers(HttpMethod.DELETE, "/**").permitAll()
                         .anyRequest().permitAll()
                 );
         return http.build();
