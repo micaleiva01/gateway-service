@@ -12,6 +12,6 @@ public class GatewayController {
 
     @GetMapping("/status")
     public Map<String, String> status() {
-        return Map.of("message", "Gateway is running!");
+        return Map.of("message", "Gateway esta corriendo");
     }
 }
